@@ -1,1 +1,1 @@
-rootProject.name = "medialibrary"
+rootProject.name = "Media Library"
