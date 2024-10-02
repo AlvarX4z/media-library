@@ -24,40 +24,4 @@ object BookHelper {
     standardId = isbn,
     legacyId = legacyIsbn
   )
-    /*
-
-    private fun originalTitle(value: String = TITLE_VALUE) = NotEmptyString(value)
-    private fun englishTitle(value: String = ENGLISH_TITLE_VALUE) = NotEmptyString(value)
-    private fun spanishTitle(value: String = SPANISH_TITLE_VALUE) = NotEmptyString(value)
-    fun title(
-        original: NotEmptyString = originalTitle(),
-        english: NotEmptyString = englishTitle(),
-        spanish: NotEmptyString = spanishTitle(),
-        romanization: NotEmptyString? = null,
-    ) = Title(
-        original = original,
-        english = english,
-        spanish = spanish,
-        romanization = romanization,
-    )
-
-    private fun publicationDate() = PastDate(LocalDate.of(2006, Month.APRIL, 25))
-
-    private fun publisherName(value: String = PUBLISHER_NAME_VALUE) = NotEmptyString(value)
-    fun publisher(value: NotEmptyString = publisherName()) = Publisher(value)
-
-
-    fun book(
-        isbn: ISBN = isbn(),
-        title: Title = title(),
-        publicationDate: PublicationDate = publicationDate(),
-        publisher: Publisher = publisher()
-    ) = Book(
-        isbn = isbn,
-        title = title,
-        publicationDate = publicationDate,
-        publisher = publisher,
-        authors =
-    )
-     */
 }
