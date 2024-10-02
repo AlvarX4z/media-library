@@ -20,7 +20,6 @@ dependencies {
 }
 
 group = "alvarx4z"
-version = "0.0.1-SNAPSHOT"
 
 java {
 	toolchain {
