@@ -1,0 +1,63 @@
+package alvarx4z.medialibrary
+
+import alvarx4z.medialibrary.domain.book.ISBN
+import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
+
+object BookHelper {
+  private const val ISBN_ID_VALUE = "9781844162949"
+  private const val LEGACY_ISBN_ID_VALUE = "184416294X"
+
+  private const val TITLE_VALUE = "Horus Rising"
+  private const val ENGLISH_TITLE_VALUE = "Horus Rising"
+  private const val SPANISH_TITLE_VALUE = "Horus, Señor de la Guerra"
+
+  private const val PUBLISHER_NAME_VALUE = "Games Workshop"
+
+  fun isbnId(value: String = ISBN_ID_VALUE) = NotEmptyString(value)
+
+  fun legacyIsbnId(value: String = LEGACY_ISBN_ID_VALUE) = NotEmptyString(value)
+
+  fun isbn(
+    isbn: NotEmptyString = isbnId(),
+    legacyIsbn: NotEmptyString? = legacyIsbnId()
+  ) = ISBN(
+    standardId = isbn,
+    legacyId = legacyIsbn
+  )
+    /*
+
+    private fun originalTitle(value: String = TITLE_VALUE) = NotEmptyString(value)
+    private fun englishTitle(value: String = ENGLISH_TITLE_VALUE) = NotEmptyString(value)
+    private fun spanishTitle(value: String = SPANISH_TITLE_VALUE) = NotEmptyString(value)
+    fun title(
+        original: NotEmptyString = originalTitle(),
+        english: NotEmptyString = englishTitle(),
+        spanish: NotEmptyString = spanishTitle(),
+        romanization: NotEmptyString? = null,
+    ) = Title(
+        original = original,
+        english = english,
+        spanish = spanish,
+        romanization = romanization,
+    )
+
+    private fun publicationDate() = PastDate(LocalDate.of(2006, Month.APRIL, 25))
+
+    private fun publisherName(value: String = PUBLISHER_NAME_VALUE) = NotEmptyString(value)
+    fun publisher(value: NotEmptyString = publisherName()) = Publisher(value)
+
+
+    fun book(
+        isbn: ISBN = isbn(),
+        title: Title = title(),
+        publicationDate: PublicationDate = publicationDate(),
+        publisher: Publisher = publisher()
+    ) = Book(
+        isbn = isbn,
+        title = title,
+        publicationDate = publicationDate,
+        publisher = publisher,
+        authors =
+    )
+     */
+}
