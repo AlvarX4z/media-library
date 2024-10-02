@@ -18,8 +18,6 @@ object BookHelper {
     private const val YEAR_VALUE = 2006
     private const val DAY_VALUE = 25
 
-    private const val PUBLISHER_NAME_VALUE = "Games Workshop"
-
     fun isbnId(value: String = ISBN_ID_VALUE) = NotEmptyString(value)
 
     fun legacyIsbnId(value: String = LEGACY_ISBN_ID_VALUE) = NotEmptyString(value)
