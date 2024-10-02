@@ -1,6 +1,7 @@
 package alvarx4z.medialibrary
 
 import alvarx4z.medialibrary.domain.book.ISBN
+import alvarx4z.medialibrary.domain.shared.Title
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
 
 object BookHelper {
@@ -23,5 +24,23 @@ object BookHelper {
     ) = ISBN(
         standardId = isbn,
         legacyId = legacyIsbn,
+    )
+
+    private fun originalTitle(value: String = TITLE_VALUE) = NotEmptyString(value)
+
+    private fun englishTitle(value: String = ENGLISH_TITLE_VALUE) = NotEmptyString(value)
+
+    private fun spanishTitle(value: String = SPANISH_TITLE_VALUE) = NotEmptyString(value)
+
+    fun title(
+        original: NotEmptyString = originalTitle(),
+        english: NotEmptyString = englishTitle(),
+        spanish: NotEmptyString = spanishTitle(),
+        romanization: NotEmptyString? = null,
+    ) = Title(
+        original = original,
+        english = english,
+        spanish = spanish,
+        romanization = romanization,
     )
 }
