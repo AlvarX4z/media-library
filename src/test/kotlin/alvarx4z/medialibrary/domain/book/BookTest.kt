@@ -1,6 +1,7 @@
 package alvarx4z.medialibrary.domain.book
 
 import alvarx4z.medialibrary.BookHelper
+import alvarx4z.medialibrary.domain.book.series.Series
 import alvarx4z.medialibrary.domain.shared.Genre
 import alvarx4z.medialibrary.domain.shared.Title
 import org.assertj.core.api.Assertions.assertThat
@@ -8,7 +9,7 @@ import org.junit.jupiter.api.Test
 
 internal class BookTest {
   @Test
-  fun `should instantiate a valid Book`() {
+  fun `should instantiate a full, valid Book`() {
     val book = BookHelper.book()
 
     assertThat(book).isInstanceOf(Book::class.java)
@@ -17,6 +18,17 @@ internal class BookTest {
     assertThat(book.authors).isInstanceOf(List::class.java)
     assertThat(book.authors.size).isEqualTo(1)
     assertThat(book.publicationDate).isInstanceOf(PublicationDate::class.java)
+    assertThat(book.pageCount).isInstanceOf(PageCount::class.java)
     assertThat(book.genre).isInstanceOf(Genre::class.java)
+    assertThat(book.series).isInstanceOf(Series::class.java)
+    assertThat(book.cover).isInstanceOf(Cover::class.java)
+  }
+
+  @Test
+  fun `should instantiate a Book with null optional properties`() {
+    val book = BookHelper.book(series = null)
+
+    assertThat(book).isNotNull
+    assertThat(book.series).isNull()
   }
 }
