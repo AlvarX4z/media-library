@@ -49,18 +49,13 @@ object BookHelper {
     english: NotEmptyString = englishTitle(),
     spanish: NotEmptyString = spanishTitle(),
     romanization: NotEmptyString? = null,
-  ) = Title(original = original, english = english, spanish = spanish, romanization = romanization)
+  ) = Title(original, english, spanish, romanization)
 
   fun authors(death: Death? = null): List<Author> {
     val professional =
       SharedHelper.professional(profession = listOf(Profession.WRITER), death = death)
     return listOf(
-      Author(
-        name = professional.name,
-        profession = professional.profession,
-        birth = professional.birth,
-        death = professional.death,
-      )
+      Author(professional.name, professional.profession, professional.birth, professional.death)
     )
   }
 
@@ -71,8 +66,7 @@ object BookHelper {
 
   fun order(number: Int = ORDER_IN_SERIES_VALUE) = Order(number)
 
-  fun series(saga: Saga = Saga.HORUS_HERESY, order: Order = order()) =
-    Series(saga = saga, order = order)
+  fun series(saga: Saga = Saga.HORUS_HERESY, order: Order = order()) = Series(saga, order)
 
   fun cover(resource: URL = SharedHelper.url(NotEmptyString(COVER_URL_VALUE))) = Cover(resource)
 
@@ -85,15 +79,5 @@ object BookHelper {
     genre: Genre = Genre.SCIENCE_FICTION,
     series: Series? = series(),
     cover: Cover = cover(),
-  ) =
-    Book(
-      isbn = isbn,
-      title = title,
-      authors = authors,
-      publicationDate = publicationDate,
-      pageCount = pageCount,
-      genre = genre,
-      series = series,
-      cover = cover,
-    )
+  ) = Book(isbn, title, authors, publicationDate, pageCount, genre, series, cover)
 }
