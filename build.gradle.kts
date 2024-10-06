@@ -1,6 +1,6 @@
 plugins {
+    id("com.ncorti.ktfmt.gradle") version "0.20.1"
     id("java-test-fixtures")
-    id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
     id("io.spring.dependency-management") version "1.1.6"
     id("org.springframework.boot") version "3.3.4"
 
@@ -34,6 +34,10 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
+}
+
+ktfmt {
+    googleStyle()
 }
 
 tasks.withType<Test> {
