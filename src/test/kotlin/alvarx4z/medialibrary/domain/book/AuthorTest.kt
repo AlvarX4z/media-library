@@ -16,6 +16,7 @@ internal class AuthorTest {
   fun `should instantiate a valid Professional with null optional properties`() {
     val author = BookHelper.authors(death = null).first()
 
+    assertThat(author).isNotNull
     assertThat(author.death).isNull()
   }
 }

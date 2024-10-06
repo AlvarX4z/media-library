@@ -21,6 +21,7 @@ internal class ProfessionalTest {
   fun `should instantiate a valid Professional with null optional properties`() {
     val professional = SharedHelper.professional(death = null)
 
+    assertThat(professional).isNotNull
     assertThat(professional.death).isNull()
   }
 }

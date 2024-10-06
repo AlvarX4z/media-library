@@ -21,6 +21,7 @@ internal class NameTest {
   fun `should instantiate a Name with null optional properties`() {
     val name = SharedHelper.name(pseudonyms = null)
 
+    assertThat(name).isNotNull
     assertThat(name.pseudonyms).isNull()
   }
 }
