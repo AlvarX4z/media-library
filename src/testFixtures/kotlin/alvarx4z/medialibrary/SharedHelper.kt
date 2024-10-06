@@ -30,8 +30,8 @@ object SharedHelper {
   fun name(
     firstName: NotEmptyString = firstName(),
     lastName: NotEmptyString = lastName(),
-    pseudonym: List<NotEmptyString>? = pseudonym(),
-  ) = Name(firstName = firstName, lastName = lastName, pseudonyms = pseudonym)
+    pseudonyms: List<NotEmptyString>? = pseudonym(),
+  ) = Name(firstName = firstName, lastName = lastName, pseudonyms = pseudonyms)
 
   fun birthDate(year: Int = YEAR_VALUE, month: Month = Month.SEPTEMBER, day: Int = DAY_VALUE) =
     Date(LocalDate.of(year, month, day))

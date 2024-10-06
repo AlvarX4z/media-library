@@ -19,7 +19,7 @@ internal class NameTest {
 
   @Test
   fun `Should instantiate a Name with null optional values`() {
-    val name = SharedHelper.name(pseudonym = null)
+    val name = SharedHelper.name(pseudonyms = null)
 
     assertThat(name.pseudonyms).isNull()
   }
