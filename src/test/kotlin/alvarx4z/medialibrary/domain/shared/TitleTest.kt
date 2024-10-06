@@ -6,26 +6,26 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 internal class TitleTest {
-    @Test
-    fun `Should instantiate a full, valid Title`() {
-        val title = BookHelper.title(romanization = NotEmptyString("Romanization"))
+  @Test
+  fun `Should instantiate a full, valid Title`() {
+    val title = BookHelper.title(romanization = NotEmptyString("Romanization"))
 
-        assertCommonBase(title)
-        assertThat(title.romanization).isInstanceOf(NotEmptyString::class.java)
-    }
+    assertCommonBase(title)
+    assertThat(title.romanization).isInstanceOf(NotEmptyString::class.java)
+  }
 
-    @Test
-    fun `Should instantiate a valid Title with null optional properties`() {
-        val title = BookHelper.title()
+  @Test
+  fun `Should instantiate a valid Title with null optional properties`() {
+    val title = BookHelper.title()
 
-        assertCommonBase(title)
-        assertThat(title.romanization).isNull()
-    }
+    assertCommonBase(title)
+    assertThat(title.romanization).isNull()
+  }
 
-    private fun assertCommonBase(title: Title) {
-        assertThat(title).isInstanceOf(Title::class.java)
-        assertThat(title.original).isInstanceOf(NotEmptyString::class.java)
-        assertThat(title.english).isInstanceOf(NotEmptyString::class.java)
-        assertThat(title.spanish).isInstanceOf(NotEmptyString::class.java)
-    }
+  private fun assertCommonBase(title: Title) {
+    assertThat(title).isInstanceOf(Title::class.java)
+    assertThat(title.original).isInstanceOf(NotEmptyString::class.java)
+    assertThat(title.english).isInstanceOf(NotEmptyString::class.java)
+    assertThat(title.spanish).isInstanceOf(NotEmptyString::class.java)
+  }
 }

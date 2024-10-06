@@ -6,13 +6,13 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 internal class NameTest {
-    @Test
-    fun `Should instantiate a valid Name`() {
-        val name = SharedHelper.name()
+  @Test
+  fun `Should instantiate a valid Name`() {
+    val name = SharedHelper.name()
 
-        assertThat(name).isInstanceOf(Name::class.java)
-        assertThat(name.firstName).isInstanceOf(NotEmptyString::class.java)
-        assertThat(name.lastName).isInstanceOf(NotEmptyString::class.java)
-        assertThat(name.pseudonym).isInstanceOf(NotEmptyString::class.java)
-    }
+    assertThat(name).isInstanceOf(Name::class.java)
+    assertThat(name.firstName).isInstanceOf(NotEmptyString::class.java)
+    assertThat(name.lastName).isInstanceOf(NotEmptyString::class.java)
+    assertThat(name.pseudonym).isInstanceOf(NotEmptyString::class.java)
+  }
 }
