@@ -1,5 +1,6 @@
 package alvarx4z.medialibrary
 
+import alvarx4z.medialibrary.domain.book.Book
 import alvarx4z.medialibrary.domain.book.ISBN
 import alvarx4z.medialibrary.domain.book.PublicationDate
 import alvarx4z.medialibrary.domain.shared.Title
@@ -40,4 +41,10 @@ object BookHelper {
 
   fun publicationDate(year: Int = YEAR_VALUE, month: Month = Month.APRIL, day: Int = DAY_VALUE) =
     PublicationDate(LocalDate.of(year, month, day))
+
+  fun book(
+    isbn: ISBN = isbn(),
+    title: Title = title(),
+    publicationDate: PublicationDate = publicationDate(),
+  ) = Book(isbn = isbn, title = title, publicationDate = publicationDate)
 }
