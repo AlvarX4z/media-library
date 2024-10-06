@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 
 internal class PageCountTest {
   @Test
-  fun `Should instantiate a valid PageCount`() {
+  fun `should instantiate a valid PageCount`() {
     val pageCount = BookHelper.pageCount()
 
     assertThat(pageCount).isInstanceOf(PageCount::class.java)

@@ -8,14 +8,14 @@ import org.junit.jupiter.api.assertThrows
 
 internal class DateTest {
   @Test
-  fun `Should instantiate a valid Birth Date`() {
+  fun `should instantiate a valid Birth Date`() {
     val birthDate = SharedHelper.birthDate()
 
     assertThat(birthDate).isInstanceOf(Date::class.java)
   }
 
   @Test
-  fun `Should throw IllegalArgumentException when future Birth Date`() {
+  fun `should throw IllegalArgumentException when future Birth Date`() {
     assertThrows<IllegalArgumentException> { SharedHelper.birthDate(3024, Month.OCTOBER, 1) }
   }
 }

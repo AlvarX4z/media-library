@@ -6,17 +6,17 @@ import org.junit.jupiter.api.assertThrows
 
 internal class JobTest {
   @Test
-  fun `Should match the Job enum entry with its String value`() {
+  fun `should match the Job enum entry with its String value`() {
     assertThat(Job.WRITER.value).isEqualTo("Writer")
   }
 
   @Test
-  fun `Should match the size of listed Job to 1`() {
+  fun `should match the size of listed Job to 1`() {
     assertThat(Job.entries.size).isEqualTo(1)
   }
 
   @Test
-  fun `Should throw IllegalArgumentException when a Job doesn't exist`() {
+  fun `should throw IllegalArgumentException when a Job doesn't exist`() {
     assertThrows<IllegalArgumentException> { Job.valueOf("Fake Job") }
   }
 }

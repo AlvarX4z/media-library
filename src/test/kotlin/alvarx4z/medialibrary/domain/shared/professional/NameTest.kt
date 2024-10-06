@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 
 internal class NameTest {
   @Test
-  fun `Should instantiate a full, valid Name`() {
+  fun `should instantiate a full, valid Name`() {
     val name = SharedHelper.name()
 
     assertThat(name).isInstanceOf(Name::class.java)
@@ -18,7 +18,7 @@ internal class NameTest {
   }
 
   @Test
-  fun `Should instantiate a Name with null optional values`() {
+  fun `should instantiate a Name with null optional values`() {
     val name = SharedHelper.name(pseudonyms = null)
 
     assertThat(name.pseudonyms).isNull()

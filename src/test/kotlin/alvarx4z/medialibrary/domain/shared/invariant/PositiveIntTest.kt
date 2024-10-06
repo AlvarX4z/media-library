@@ -6,7 +6,7 @@ import org.junit.jupiter.api.assertThrows
 
 internal class PositiveIntTest {
   @Test
-  fun `Should instantiate a valid PositiveInt`() {
+  fun `should instantiate a valid PositiveInt`() {
     val positiveInt = PositiveInt(VALUE)
 
     assertThat(positiveInt).isInstanceOf(PositiveInt::class.java)
@@ -14,7 +14,7 @@ internal class PositiveIntTest {
   }
 
   @Test
-  fun `Should throw IllegalArgumentException when invalid PositiveInt`() {
+  fun `should throw IllegalArgumentException when invalid PositiveInt`() {
     assertThrows<IllegalArgumentException> { PositiveInt(0) }
   }
 
