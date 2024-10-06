@@ -3,6 +3,7 @@ package alvarx4z.medialibrary
 import alvarx4z.medialibrary.domain.book.*
 import alvarx4z.medialibrary.domain.shared.Genre
 import alvarx4z.medialibrary.domain.shared.Title
+import alvarx4z.medialibrary.domain.shared.URL
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
 import alvarx4z.medialibrary.domain.shared.professional.Death
 import alvarx4z.medialibrary.domain.shared.professional.Profession
@@ -21,6 +22,9 @@ object BookHelper {
   private const val DAY_VALUE = 25
 
   private const val PAGE_COUNT_VALUE = 416
+
+  private const val COVER_URL_VALUE =
+    "https://m.media-amazon.com/images/I/81Q-cK3hDmL._AC_UF894,1000_QL80_.jpg"
 
   fun isbnId(value: String = ISBN_ID_VALUE) = NotEmptyString(value)
 
@@ -60,6 +64,8 @@ object BookHelper {
 
   fun pageCount(value: Int = PAGE_COUNT_VALUE) = PageCount(value)
 
+  fun cover(resource: URL = SharedHelper.url(NotEmptyString(COVER_URL_VALUE))) = Cover(resource)
+
   fun book(
     isbn: ISBN = isbn(),
     title: Title = title(),
@@ -67,6 +73,7 @@ object BookHelper {
     publicationDate: PublicationDate = publicationDate(),
     pageCount: PageCount = pageCount(),
     genre: Genre = Genre.SCIENCE_FICTION,
+    cover: Cover = cover(),
   ) =
     Book(
       isbn = isbn,
@@ -75,5 +82,6 @@ object BookHelper {
       publicationDate = publicationDate,
       pageCount = pageCount,
       genre = genre,
+      cover = cover,
     )
 }
