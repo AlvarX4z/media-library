@@ -2,6 +2,7 @@ package alvarx4z.medialibrary
 
 import alvarx4z.medialibrary.domain.book.Book
 import alvarx4z.medialibrary.domain.book.ISBN
+import alvarx4z.medialibrary.domain.book.PageCount
 import alvarx4z.medialibrary.domain.book.PublicationDate
 import alvarx4z.medialibrary.domain.shared.Title
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
@@ -18,6 +19,8 @@ object BookHelper {
 
   private const val YEAR_VALUE = 2006
   private const val DAY_VALUE = 25
+
+  private const val PAGE_COUNT_VALUE = 416
 
   fun isbnId(value: String = ISBN_ID_VALUE) = NotEmptyString(value)
 
@@ -42,9 +45,12 @@ object BookHelper {
   fun publicationDate(year: Int = YEAR_VALUE, month: Month = Month.APRIL, day: Int = DAY_VALUE) =
     PublicationDate(LocalDate.of(year, month, day))
 
+  fun pageCount(value: Int = PAGE_COUNT_VALUE) = PageCount(value)
+
   fun book(
     isbn: ISBN = isbn(),
     title: Title = title(),
     publicationDate: PublicationDate = publicationDate(),
-  ) = Book(isbn = isbn, title = title, publicationDate = publicationDate)
+    pageCount: PageCount = pageCount(),
+  ) = Book(isbn = isbn, title = title, publicationDate = publicationDate, pageCount = pageCount)
 }
