@@ -73,6 +73,7 @@ object BookHelper {
     publicationDate: PublicationDate = publicationDate(),
     pageCount: PageCount = pageCount(),
     genre: Genre = Genre.SCIENCE_FICTION,
+    series: Series = Series.HORUS_HERESY,
     cover: Cover = cover(),
   ) =
     Book(
@@ -82,6 +83,7 @@ object BookHelper {
       publicationDate = publicationDate,
       pageCount = pageCount,
       genre = genre,
+      series = series,
       cover = cover,
     )
 }

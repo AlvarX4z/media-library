@@ -10,5 +10,6 @@ data class Book(
   val publicationDate: PublicationDate,
   val pageCount: PageCount,
   val genre: Genre,
+  val series: Series,
   val cover: Cover,
 )
