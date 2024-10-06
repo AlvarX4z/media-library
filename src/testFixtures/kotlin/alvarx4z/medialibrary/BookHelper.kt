@@ -8,7 +8,6 @@ import alvarx4z.medialibrary.domain.shared.Genre
 import alvarx4z.medialibrary.domain.shared.Title
 import alvarx4z.medialibrary.domain.shared.URL
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
-import alvarx4z.medialibrary.domain.shared.invariant.PositiveInt
 import alvarx4z.medialibrary.domain.shared.professional.Death
 import alvarx4z.medialibrary.domain.shared.professional.Profession
 import java.time.LocalDate
@@ -72,7 +71,8 @@ object BookHelper {
 
   fun order(number: Int = ORDER_IN_SERIES_VALUE) = Order(number)
 
-  fun series(saga: Saga = Saga.HORUS_HERESY, order: Order = order()) = Series(saga = saga, order = order)
+  fun series(saga: Saga = Saga.HORUS_HERESY, order: Order = order()) =
+    Series(saga = saga, order = order)
 
   fun cover(resource: URL = SharedHelper.url(NotEmptyString(COVER_URL_VALUE))) = Cover(resource)
 

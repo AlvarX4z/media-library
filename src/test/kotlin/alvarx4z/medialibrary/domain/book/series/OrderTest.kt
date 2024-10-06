@@ -1,7 +1,6 @@
 package alvarx4z.medialibrary.domain.book.series
 
 import alvarx4z.medialibrary.BookHelper
-import java.time.Month
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
