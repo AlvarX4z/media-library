@@ -1,12 +1,11 @@
 package alvarx4z.medialibrary
 
-import alvarx4z.medialibrary.domain.book.Book
-import alvarx4z.medialibrary.domain.book.ISBN
-import alvarx4z.medialibrary.domain.book.PageCount
-import alvarx4z.medialibrary.domain.book.PublicationDate
+import alvarx4z.medialibrary.domain.book.*
 import alvarx4z.medialibrary.domain.shared.Genre
 import alvarx4z.medialibrary.domain.shared.Title
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
+import alvarx4z.medialibrary.domain.shared.professional.Death
+import alvarx4z.medialibrary.domain.shared.professional.Profession
 import java.time.LocalDate
 import java.time.Month
 
@@ -43,6 +42,19 @@ object BookHelper {
     romanization: NotEmptyString? = null,
   ) = Title(original = original, english = english, spanish = spanish, romanization = romanization)
 
+  fun authors(death: Death? = null): List<Author> {
+    val professional =
+      SharedHelper.professional(profession = listOf(Profession.WRITER), death = death)
+    return listOf(
+      Author(
+        name = professional.name,
+        profession = professional.profession,
+        birth = professional.birth,
+        death = professional.death,
+      )
+    )
+  }
+
   fun publicationDate(year: Int = YEAR_VALUE, month: Month = Month.APRIL, day: Int = DAY_VALUE) =
     PublicationDate(LocalDate.of(year, month, day))
 
@@ -51,6 +63,7 @@ object BookHelper {
   fun book(
     isbn: ISBN = isbn(),
     title: Title = title(),
+    authors: List<Author> = authors(),
     publicationDate: PublicationDate = publicationDate(),
     pageCount: PageCount = pageCount(),
     genre: Genre = Genre.SCIENCE_FICTION,
@@ -58,6 +71,7 @@ object BookHelper {
     Book(
       isbn = isbn,
       title = title,
+      authors = authors,
       publicationDate = publicationDate,
       pageCount = pageCount,
       genre = genre,

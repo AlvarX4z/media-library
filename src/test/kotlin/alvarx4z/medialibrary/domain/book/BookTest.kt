@@ -14,6 +14,8 @@ internal class BookTest {
     assertThat(book).isInstanceOf(Book::class.java)
     assertThat(book.isbn).isInstanceOf(ISBN::class.java)
     assertThat(book.title).isInstanceOf(Title::class.java)
+    assertThat(book.authors).isInstanceOf(List::class.java)
+    assertThat(book.authors.size).isEqualTo(1)
     assertThat(book.publicationDate).isInstanceOf(PublicationDate::class.java)
     assertThat(book.genre).isInstanceOf(Genre::class.java)
   }
