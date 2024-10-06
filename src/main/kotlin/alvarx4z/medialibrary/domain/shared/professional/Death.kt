@@ -1,5 +1,3 @@
 package alvarx4z.medialibrary.domain.shared.professional
 
-enum class Job(val value: String) {
-  WRITER("Writer")
-}
+class Death(val date: Date, val location: Location)

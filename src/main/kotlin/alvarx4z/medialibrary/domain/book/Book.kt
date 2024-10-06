@@ -6,6 +6,7 @@ import alvarx4z.medialibrary.domain.shared.Title
 data class Book(
   val isbn: ISBN,
   val title: Title,
+  val authors: List<Author>,
   val publicationDate: PublicationDate,
   val pageCount: PageCount,
   val genre: Genre,
