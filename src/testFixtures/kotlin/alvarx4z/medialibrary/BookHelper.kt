@@ -16,19 +16,14 @@ import java.time.Month
 object BookHelper {
   private const val ISBN_ID_VALUE = "9781844162949"
   private const val LEGACY_ISBN_ID_VALUE = "184416294X"
-
   private const val TITLE_VALUE = "Horus Rising"
   private const val ENGLISH_TITLE_VALUE = "Horus Rising"
   private const val SPANISH_TITLE_VALUE = "Horus, Señor de la Guerra"
-
   private const val YEAR_VALUE = 2006
   private const val DAY_VALUE = 25
-
   private const val PAGE_COUNT_VALUE = 416
-
   private const val COVER_URL_VALUE =
     "https://m.media-amazon.com/images/I/81Q-cK3hDmL._AC_UF894,1000_QL80_.jpg"
-
   private const val ORDER_IN_SERIES_VALUE = 1
 
   fun isbnId(value: String = ISBN_ID_VALUE) = NotEmptyString(value)
