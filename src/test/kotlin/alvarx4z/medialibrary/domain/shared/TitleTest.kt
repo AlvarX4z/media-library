@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 
 internal class TitleTest {
   @Test
-  fun `Should instantiate a full, valid Title`() {
+  fun `should instantiate a full, valid Title`() {
     val title = BookHelper.title(romanization = NotEmptyString("Romanization"))
 
     assertCommonBase(title)
@@ -15,7 +15,7 @@ internal class TitleTest {
   }
 
   @Test
-  fun `Should instantiate a valid Title with null optional properties`() {
+  fun `should instantiate a valid Title with null optional properties`() {
     val title = BookHelper.title()
 
     assertCommonBase(title)

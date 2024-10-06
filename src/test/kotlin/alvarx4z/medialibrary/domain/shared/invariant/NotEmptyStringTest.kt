@@ -6,7 +6,7 @@ import org.junit.jupiter.api.assertThrows
 
 internal class NotEmptyStringTest {
   @Test
-  fun `Should instantiate a valid NotEmptyString`() {
+  fun `should instantiate a valid NotEmptyString`() {
     val notEmptyString = NotEmptyString(VALUE)
 
     assertThat(notEmptyString).isInstanceOf(NotEmptyString::class.java)
@@ -14,7 +14,7 @@ internal class NotEmptyStringTest {
   }
 
   @Test
-  fun `Should throw IllegalArgumentException when invalid NotEmptyString`() {
+  fun `should throw IllegalArgumentException when invalid NotEmptyString`() {
     assertThrows<IllegalArgumentException> { NotEmptyString("") }
   }
 

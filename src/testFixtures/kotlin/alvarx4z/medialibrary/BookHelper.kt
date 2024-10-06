@@ -4,6 +4,7 @@ import alvarx4z.medialibrary.domain.book.Book
 import alvarx4z.medialibrary.domain.book.ISBN
 import alvarx4z.medialibrary.domain.book.PageCount
 import alvarx4z.medialibrary.domain.book.PublicationDate
+import alvarx4z.medialibrary.domain.shared.Genre
 import alvarx4z.medialibrary.domain.shared.Title
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
 import java.time.LocalDate
@@ -52,5 +53,13 @@ object BookHelper {
     title: Title = title(),
     publicationDate: PublicationDate = publicationDate(),
     pageCount: PageCount = pageCount(),
-  ) = Book(isbn = isbn, title = title, publicationDate = publicationDate, pageCount = pageCount)
+    genre: Genre = Genre.SCIENCE_FICTION,
+  ) =
+    Book(
+      isbn = isbn,
+      title = title,
+      publicationDate = publicationDate,
+      pageCount = pageCount,
+      genre = genre,
+    )
 }

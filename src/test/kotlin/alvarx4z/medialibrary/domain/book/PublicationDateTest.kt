@@ -8,14 +8,14 @@ import org.junit.jupiter.api.assertThrows
 
 internal class PublicationDateTest {
   @Test
-  fun `Should instantiate a valid PublicationDate`() {
+  fun `should instantiate a valid PublicationDate`() {
     val pastDate = BookHelper.publicationDate()
 
     assertThat(pastDate).isInstanceOf(PublicationDate::class.java)
   }
 
   @Test
-  fun `Should throw IllegalArgumentException when future PublicationDate`() {
+  fun `should throw IllegalArgumentException when future PublicationDate`() {
     assertThrows<IllegalArgumentException> { BookHelper.publicationDate(3024, Month.OCTOBER, 1) }
   }
 }

@@ -21,6 +21,7 @@ My personal Media Library served as a REST API by using Kotlin and Spring Boot.
 - GitHub Dependabot
 - GitHub Actions
 - IntelliJ IDEA Community Edition
+- ktfmt
 
 ---
 
