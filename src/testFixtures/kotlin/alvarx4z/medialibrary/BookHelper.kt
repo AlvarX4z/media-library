@@ -1,6 +1,9 @@
 package alvarx4z.medialibrary
 
 import alvarx4z.medialibrary.domain.book.*
+import alvarx4z.medialibrary.domain.book.series.Order
+import alvarx4z.medialibrary.domain.book.series.Saga
+import alvarx4z.medialibrary.domain.book.series.Series
 import alvarx4z.medialibrary.domain.shared.Genre
 import alvarx4z.medialibrary.domain.shared.Title
 import alvarx4z.medialibrary.domain.shared.URL
@@ -26,6 +29,8 @@ object BookHelper {
   private const val COVER_URL_VALUE =
     "https://m.media-amazon.com/images/I/81Q-cK3hDmL._AC_UF894,1000_QL80_.jpg"
 
+  private const val ORDER_IN_SERIES_VALUE = 1
+
   fun isbnId(value: String = ISBN_ID_VALUE) = NotEmptyString(value)
 
   fun legacyIsbnId(value: String = LEGACY_ISBN_ID_VALUE) = NotEmptyString(value)
@@ -44,18 +49,13 @@ object BookHelper {
     english: NotEmptyString = englishTitle(),
     spanish: NotEmptyString = spanishTitle(),
     romanization: NotEmptyString? = null,
-  ) = Title(original = original, english = english, spanish = spanish, romanization = romanization)
+  ) = Title(original, english, spanish, romanization)
 
   fun authors(death: Death? = null): List<Author> {
     val professional =
       SharedHelper.professional(profession = listOf(Profession.WRITER), death = death)
     return listOf(
-      Author(
-        name = professional.name,
-        profession = professional.profession,
-        birth = professional.birth,
-        death = professional.death,
-      )
+      Author(professional.name, professional.profession, professional.birth, professional.death)
     )
   }
 
@@ -63,6 +63,10 @@ object BookHelper {
     PublicationDate(LocalDate.of(year, month, day))
 
   fun pageCount(value: Int = PAGE_COUNT_VALUE) = PageCount(value)
+
+  fun order(number: Int = ORDER_IN_SERIES_VALUE) = Order(number)
+
+  fun series(saga: Saga = Saga.HORUS_HERESY, order: Order = order()) = Series(saga, order)
 
   fun cover(resource: URL = SharedHelper.url(NotEmptyString(COVER_URL_VALUE))) = Cover(resource)
 
@@ -73,17 +77,7 @@ object BookHelper {
     publicationDate: PublicationDate = publicationDate(),
     pageCount: PageCount = pageCount(),
     genre: Genre = Genre.SCIENCE_FICTION,
-    series: Series = Series.HORUS_HERESY,
+    series: Series? = series(),
     cover: Cover = cover(),
-  ) =
-    Book(
-      isbn = isbn,
-      title = title,
-      authors = authors,
-      publicationDate = publicationDate,
-      pageCount = pageCount,
-      genre = genre,
-      series = series,
-      cover = cover,
-    )
+  ) = Book(isbn, title, authors, publicationDate, pageCount, genre, series, cover)
 }

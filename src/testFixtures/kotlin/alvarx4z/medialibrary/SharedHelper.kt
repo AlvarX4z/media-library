@@ -39,7 +39,7 @@ object SharedHelper {
     firstName: NotEmptyString = firstName(),
     lastName: NotEmptyString = lastName(),
     pseudonyms: List<NotEmptyString>? = pseudonym(),
-  ) = Name(firstName = firstName, lastName = lastName, pseudonyms = pseudonyms)
+  ) = Name(firstName, lastName, pseudonyms)
 
   fun birthDate(
     year: Int = BIRTH_YEAR_VALUE,
@@ -50,10 +50,9 @@ object SharedHelper {
   private fun city(value: String = CITY_VALUE) = NotEmptyString(value)
 
   fun location(city: NotEmptyString = city(), country: Country = Country.UNITED_STATES) =
-    Location(city = city, country = country)
+    Location(city, country)
 
-  fun birth(date: Date = birthDate(), location: Location = location()) =
-    Birth(date = date, location = location)
+  fun birth(date: Date = birthDate(), location: Location = location()) = Birth(date, location)
 
   private fun deathDate(
     year: Int = DEATH_YEAR_VALUE,
@@ -61,15 +60,14 @@ object SharedHelper {
     day: Int = DEATH_DAY_VALUE,
   ) = Date(LocalDate.of(year, month, day))
 
-  fun death(date: Date = deathDate(), location: Location = location()) =
-    Death(date = date, location = location)
+  fun death(date: Date = deathDate(), location: Location = location()) = Death(date, location)
 
   fun professional(
     name: Name = name(),
     profession: List<Profession> = listOf(Profession.WRITER),
     birth: Birth = birth(),
     death: Death? = death(),
-  ) = Professional(name = name, profession = profession, birth = birth, death = death)
+  ) = Professional(name, profession, birth, death)
 
   fun url(resource: NotEmptyString = NotEmptyString(URL_VALUE)) = URL(resource)
 }
