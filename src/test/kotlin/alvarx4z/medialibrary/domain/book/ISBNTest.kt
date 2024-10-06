@@ -20,8 +20,7 @@ internal class ISBNTest {
   fun `should instantiate a valid ISBN with null optional properties`() {
     val isbn = BookHelper.isbn(legacyIsbn = null)
 
-    assertThat(isbn).isInstanceOf(ISBN::class.java)
-    assertThat(isbn.standardId).isInstanceOf(NotEmptyString::class.java)
+    assertThat(isbn).isNotNull
     assertThat(isbn.legacyId).isNull()
   }
 

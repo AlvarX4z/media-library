@@ -13,14 +13,11 @@ object SharedHelper {
   private const val FIRST_PSEUDONYM_VALUE = "Richard Bachman"
   private const val SECOND_PSEUDONYM_VALUE = "John Swithen"
   private const val THIRD_PSEUDONYM_VALUE = "Beryl Evans"
-
   private const val BIRTH_YEAR_VALUE = 1947
   private const val BIRTH_DAY_VALUE = 21
   private const val DEATH_YEAR_VALUE = 2024
   private const val DEATH_DAY_VALUE = 17
-
   private const val CITY_VALUE = "Portland"
-
   private const val URL_VALUE =
     "https://upload.wikimedia.org/wikipedia/commons/e/e3/Stephen_King%2C_Comicon.jpg"
 
