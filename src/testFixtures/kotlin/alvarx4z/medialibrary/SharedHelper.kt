@@ -1,6 +1,7 @@
 package alvarx4z.medialibrary
 
 import alvarx4z.medialibrary.domain.shared.Country
+import alvarx4z.medialibrary.domain.shared.URL
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
 import alvarx4z.medialibrary.domain.shared.professional.*
 import java.time.LocalDate
@@ -19,6 +20,9 @@ object SharedHelper {
   private const val DEATH_DAY_VALUE = 17
 
   private const val CITY_VALUE = "Portland"
+
+  private const val URL_VALUE =
+    "https://upload.wikimedia.org/wikipedia/commons/e/e3/Stephen_King%2C_Comicon.jpg"
 
   private fun firstName(firstName: String = FIRST_NAME_VALUE) = NotEmptyString(firstName)
 
@@ -66,4 +70,6 @@ object SharedHelper {
     birth: Birth = birth(),
     death: Death? = death(),
   ) = Professional(name = name, profession = profession, birth = birth, death = death)
+
+  fun url(resource: NotEmptyString = NotEmptyString(URL_VALUE)) = URL(resource)
 }
