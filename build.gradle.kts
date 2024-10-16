@@ -5,6 +5,7 @@ plugins {
     id("org.springframework.boot") version "3.3.4"
 
     kotlin("jvm") version "2.0.21"
+    kotlin("plugin.jpa") version "2.0.21"
     kotlin("plugin.spring") version "2.0.21"
 }
 
@@ -13,8 +14,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.postgresql:postgresql")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
