@@ -11,7 +11,7 @@ My personal Media Library served as a REST API by using Kotlin and Spring Boot.
 ## Technologies and Tools
 
 - Kotlin
-- Java 21 (Temurin)
+- Java 21
 - Gradle
 - Spring Boot
 - PostgreSQL
