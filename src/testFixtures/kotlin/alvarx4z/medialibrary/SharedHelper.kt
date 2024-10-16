@@ -1,6 +1,8 @@
 package alvarx4z.medialibrary
 
 import alvarx4z.medialibrary.domain.shared.Country
+import alvarx4z.medialibrary.domain.shared.Cover
+import alvarx4z.medialibrary.domain.shared.Summary
 import alvarx4z.medialibrary.domain.shared.URL
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
 import alvarx4z.medialibrary.domain.shared.professional.*
@@ -21,6 +23,9 @@ object SharedHelper {
   private const val CITY_VALUE = "Portland"
   private const val URL_VALUE =
     "https://upload.wikimedia.org/wikipedia/commons/e/e3/Stephen_King%2C_Comicon.jpg"
+  private const val COVER_URL_VALUE =
+    "https://m.media-amazon.com/images/I/81Q-cK3hDmL._AC_UF894,1000_QL80_.jpg"
+  private const val SUMMARY_VALUE = "After thousands of years of expansion and conquest..."
 
   private fun firstName(firstName: String = NAME_VALUE) = NotEmptyString(firstName)
 
@@ -71,4 +76,8 @@ object SharedHelper {
   ) = Professional(name, profession, birth, death)
 
   fun url(resource: NotEmptyString = NotEmptyString(URL_VALUE)) = URL(resource)
+
+  fun cover(resource: URL = url(NotEmptyString(COVER_URL_VALUE))) = Cover(resource)
+
+  fun summary(value: NotEmptyString = NotEmptyString(SUMMARY_VALUE)) = Summary(value)
 }
