@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: Media Library
+  datasource:
+    url: jdbc:postgresql://localhost:5432/media_library
+    driver-class-name: org.postgresql.Driver
+    username: user
+    password: pass
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  profiles:
+    active: dev
