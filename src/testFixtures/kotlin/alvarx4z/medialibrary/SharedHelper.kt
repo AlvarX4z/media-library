@@ -8,8 +8,9 @@ import java.time.LocalDate
 import java.time.Month
 
 object SharedHelper {
-  private const val FIRST_NAME_VALUE = "Stephen Edwin"
-  private const val LAST_NAME_VALUE = "King"
+  private const val NAME_VALUE = "Stephen King"
+  private const val FULL_NAME_VALUE = "Stephen Edwin King"
+  private const val NON_LATIN_NAME_VALUE = "スティーヴン・キング"
   private const val FIRST_PSEUDONYM_VALUE = "Richard Bachman"
   private const val SECOND_PSEUDONYM_VALUE = "John Swithen"
   private const val THIRD_PSEUDONYM_VALUE = "Beryl Evans"
@@ -21,9 +22,11 @@ object SharedHelper {
   private const val URL_VALUE =
     "https://upload.wikimedia.org/wikipedia/commons/e/e3/Stephen_King%2C_Comicon.jpg"
 
-  private fun firstName(firstName: String = FIRST_NAME_VALUE) = NotEmptyString(firstName)
+  private fun firstName(firstName: String = NAME_VALUE) = NotEmptyString(firstName)
 
-  private fun lastName(lastName: String = LAST_NAME_VALUE) = NotEmptyString(lastName)
+  private fun lastName(lastName: String = FULL_NAME_VALUE) = NotEmptyString(lastName)
+
+  private fun nonLatinName(lastName: String = NON_LATIN_NAME_VALUE) = NotEmptyString(lastName)
 
   private fun pseudonym() =
     listOf(
@@ -35,8 +38,9 @@ object SharedHelper {
   fun name(
     firstName: NotEmptyString = firstName(),
     lastName: NotEmptyString = lastName(),
+    nonLatinName: NotEmptyString? = nonLatinName(),
     pseudonyms: List<NotEmptyString>? = pseudonym(),
-  ) = Name(firstName, lastName, pseudonyms)
+  ) = Name(firstName, lastName, nonLatinName, pseudonyms)
 
   fun birthDate(
     year: Int = BIRTH_YEAR_VALUE,
