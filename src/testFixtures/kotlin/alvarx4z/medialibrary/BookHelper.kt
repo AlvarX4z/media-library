@@ -1,12 +1,8 @@
 package alvarx4z.medialibrary
 
 import alvarx4z.medialibrary.domain.book.*
-import alvarx4z.medialibrary.domain.book.series.Order
-import alvarx4z.medialibrary.domain.book.series.Saga
-import alvarx4z.medialibrary.domain.book.series.Series
-import alvarx4z.medialibrary.domain.shared.Genre
-import alvarx4z.medialibrary.domain.shared.Title
-import alvarx4z.medialibrary.domain.shared.URL
+import alvarx4z.medialibrary.domain.book.series.*
+import alvarx4z.medialibrary.domain.shared.*
 import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
 import alvarx4z.medialibrary.domain.shared.professional.Death
 import alvarx4z.medialibrary.domain.shared.professional.Profession
@@ -22,8 +18,6 @@ object BookHelper {
   private const val YEAR_VALUE = 2006
   private const val DAY_VALUE = 25
   private const val PAGE_COUNT_VALUE = 416
-  private const val COVER_URL_VALUE =
-    "https://m.media-amazon.com/images/I/81Q-cK3hDmL._AC_UF894,1000_QL80_.jpg"
   private const val ORDER_IN_SERIES_VALUE = 1
 
   fun isbnId(value: String = ISBN_ID_VALUE) = NotEmptyString(value)
@@ -63,8 +57,6 @@ object BookHelper {
 
   fun series(saga: Saga = Saga.HORUS_HERESY, order: Order = order()) = Series(saga, order)
 
-  fun cover(resource: URL = SharedHelper.url(NotEmptyString(COVER_URL_VALUE))) = Cover(resource)
-
   fun book(
     isbn: ISBN = isbn(),
     title: Title = title(),
@@ -73,6 +65,7 @@ object BookHelper {
     pageCount: PageCount = pageCount(),
     genre: Genre = Genre.SCIENCE_FICTION,
     series: Series? = series(),
-    cover: Cover = cover(),
-  ) = Book(isbn, title, authors, publicationDate, pageCount, genre, series, cover)
+    cover: Cover = SharedHelper.cover(),
+    summary: Summary? = SharedHelper.summary(),
+  ) = Book(isbn, title, authors, publicationDate, pageCount, genre, series, cover, summary)
 }
