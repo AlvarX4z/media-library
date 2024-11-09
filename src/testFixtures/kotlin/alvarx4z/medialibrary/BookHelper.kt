@@ -5,7 +5,6 @@ import alvarx4z.medialibrary.domain.book.series.*
 import alvarx4z.medialibrary.domain.shared.*
 import alvarx4z.medialibrary.domain.shared.invariants.NotEmptyString
 import alvarx4z.medialibrary.domain.shared.professional.Death
-import alvarx4z.medialibrary.domain.shared.professional.Profession
 import java.time.LocalDate
 import java.time.Month
 
@@ -41,11 +40,8 @@ object BookHelper {
   ) = Title(original, english, spanish, romanization)
 
   fun authors(death: Death? = null): List<Author> {
-    val professional =
-      SharedHelper.professional(profession = listOf(Profession.WRITER), death = death)
-    return listOf(
-      Author(professional.name, professional.profession, professional.birth, professional.death)
-    )
+    val professional = SharedHelper.professional(death = death)
+    return listOf(Author(professional.name, professional.birth, professional.death))
   }
 
   fun publicationDate(year: Int = YEAR_VALUE, month: Month = Month.APRIL, day: Int = DAY_VALUE) =

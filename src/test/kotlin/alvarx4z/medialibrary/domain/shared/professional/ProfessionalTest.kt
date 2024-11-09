@@ -11,8 +11,6 @@ internal class ProfessionalTest {
 
     assertThat(professional).isInstanceOf(Professional::class.java)
     assertThat(professional.name).isInstanceOf(Name::class.java)
-    assertThat(professional.profession).isInstanceOf(List::class.java)
-    assertThat(professional.profession.size).isEqualTo(1)
     assertThat(professional.birth).isInstanceOf(Birth::class.java)
     assertThat(professional.death).isInstanceOf(Death::class.java)
   }
