@@ -68,12 +68,8 @@ object SharedHelper {
 
   fun death(date: Date = deathDate(), location: Location = location()) = Death(date, location)
 
-  fun professional(
-    name: Name = name(),
-    profession: List<Profession> = listOf(Profession.WRITER),
-    birth: Birth = birth(),
-    death: Death? = death(),
-  ) = Professional(name, profession, birth, death)
+  fun professional(name: Name = name(), birth: Birth = birth(), death: Death? = death()) =
+    Professional(name, birth, death)
 
   fun url(resource: NotEmptyString = NotEmptyString(URL_VALUE)) = URL(resource)
 
