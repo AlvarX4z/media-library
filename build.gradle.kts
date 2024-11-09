@@ -1,5 +1,5 @@
 plugins {
-    id("com.ncorti.ktfmt.gradle") version "0.20.1"
+    id("com.ncorti.ktfmt.gradle") version "0.21.0"
     id("java-test-fixtures")
     id("io.spring.dependency-management") version "1.1.6"
     id("org.springframework.boot") version "3.3.5"
