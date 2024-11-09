@@ -1,4 +1,4 @@
-package alvarx4z.medialibrary.domain.shared.invariant
+package alvarx4z.medialibrary.domain.shared.invariants
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

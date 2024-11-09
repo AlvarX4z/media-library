@@ -3,7 +3,7 @@ package alvarx4z.medialibrary
 import alvarx4z.medialibrary.domain.book.*
 import alvarx4z.medialibrary.domain.book.series.*
 import alvarx4z.medialibrary.domain.shared.*
-import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
+import alvarx4z.medialibrary.domain.shared.invariants.NotEmptyString
 import alvarx4z.medialibrary.domain.shared.professional.Death
 import alvarx4z.medialibrary.domain.shared.professional.Profession
 import java.time.LocalDate

@@ -1,4 +1,4 @@
-package alvarx4z.medialibrary.domain.shared.invariant
+package alvarx4z.medialibrary.domain.shared.invariants
 
 import java.time.LocalDate
 import java.time.Month

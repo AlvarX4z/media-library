@@ -1,6 +1,6 @@
 package alvarx4z.medialibrary.domain.shared
 
-import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
+import alvarx4z.medialibrary.domain.shared.invariants.NotEmptyString
 
 data class URL(val resource: NotEmptyString) {
   init {

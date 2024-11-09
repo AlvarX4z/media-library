@@ -1,6 +1,6 @@
 package alvarx4z.medialibrary.domain.book
 
-import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
+import alvarx4z.medialibrary.domain.shared.invariants.NotEmptyString
 
 data class ISBN(val standardId: NotEmptyString, val legacyId: NotEmptyString?) {
   init {

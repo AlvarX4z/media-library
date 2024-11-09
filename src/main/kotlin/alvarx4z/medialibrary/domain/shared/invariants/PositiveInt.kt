@@ -1,4 +1,4 @@
-package alvarx4z.medialibrary.domain.shared.invariant
+package alvarx4z.medialibrary.domain.shared.invariants
 
 open class PositiveInt(val value: Int) {
   init {
