@@ -1,10 +1,14 @@
 package alvarx4z.medialibrary
 
-import alvarx4z.medialibrary.domain.book.*
-import alvarx4z.medialibrary.domain.book.series.*
-import alvarx4z.medialibrary.domain.shared.*
-import alvarx4z.medialibrary.domain.shared.invariants.NotEmptyString
-import alvarx4z.medialibrary.domain.shared.professional.Death
+import alvarx4z.medialibrary.domain.model.book.*
+import alvarx4z.medialibrary.domain.model.book.series.Order
+import alvarx4z.medialibrary.domain.model.book.series.Saga
+import alvarx4z.medialibrary.domain.model.book.series.Series
+import alvarx4z.medialibrary.domain.model.shared.Cover
+import alvarx4z.medialibrary.domain.model.shared.Genre
+import alvarx4z.medialibrary.domain.model.shared.Summary
+import alvarx4z.medialibrary.domain.model.shared.Title
+import alvarx4z.medialibrary.domain.model.shared.professional.Death
 import java.time.LocalDate
 import java.time.Month
 
@@ -19,24 +23,32 @@ object BookHelper {
   private const val PAGE_COUNT_VALUE = 416
   private const val ORDER_IN_SERIES_VALUE = 1
 
-  fun isbnId(value: String = ISBN_ID_VALUE) = NotEmptyString(value)
+  fun isbnId(value: String = ISBN_ID_VALUE) =
+    alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString(value)
 
-  fun legacyIsbnId(value: String = LEGACY_ISBN_ID_VALUE) = NotEmptyString(value)
+  fun legacyIsbnId(value: String = LEGACY_ISBN_ID_VALUE) =
+    alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString(value)
 
-  fun isbn(isbn: NotEmptyString = isbnId(), legacyIsbn: NotEmptyString? = legacyIsbnId()) =
-    ISBN(standardId = isbn, legacyId = legacyIsbn)
+  fun isbn(
+    isbn: alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString = isbnId(),
+    legacyIsbn: alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString? =
+      legacyIsbnId(),
+  ) = ISBN(standardId = isbn, legacyId = legacyIsbn)
 
-  private fun originalTitle(value: String = TITLE_VALUE) = NotEmptyString(value)
+  private fun originalTitle(value: String = TITLE_VALUE) =
+    alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString(value)
 
-  private fun englishTitle(value: String = ENGLISH_TITLE_VALUE) = NotEmptyString(value)
+  private fun englishTitle(value: String = ENGLISH_TITLE_VALUE) =
+    alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString(value)
 
-  private fun spanishTitle(value: String = SPANISH_TITLE_VALUE) = NotEmptyString(value)
+  private fun spanishTitle(value: String = SPANISH_TITLE_VALUE) =
+    alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString(value)
 
   fun title(
-    original: NotEmptyString = originalTitle(),
-    english: NotEmptyString = englishTitle(),
-    spanish: NotEmptyString = spanishTitle(),
-    romanization: NotEmptyString? = null,
+    original: alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString = originalTitle(),
+    english: alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString = englishTitle(),
+    spanish: alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString = spanishTitle(),
+    romanization: alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString? = null,
   ) = Title(original, english, spanish, romanization)
 
   fun authors(death: Death? = null): List<Author> {
