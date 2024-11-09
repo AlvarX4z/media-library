@@ -4,7 +4,7 @@ import alvarx4z.medialibrary.domain.shared.Country
 import alvarx4z.medialibrary.domain.shared.Cover
 import alvarx4z.medialibrary.domain.shared.Summary
 import alvarx4z.medialibrary.domain.shared.URL
-import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
+import alvarx4z.medialibrary.domain.shared.invariants.NotEmptyString
 import alvarx4z.medialibrary.domain.shared.professional.*
 import java.time.LocalDate
 import java.time.Month

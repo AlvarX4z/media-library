@@ -2,7 +2,7 @@ package alvarx4z.medialibrary.domain.shared.professional
 
 import alvarx4z.medialibrary.SharedHelper
 import alvarx4z.medialibrary.domain.shared.Country
-import alvarx4z.medialibrary.domain.shared.invariant.NotEmptyString
+import alvarx4z.medialibrary.domain.shared.invariants.NotEmptyString
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
