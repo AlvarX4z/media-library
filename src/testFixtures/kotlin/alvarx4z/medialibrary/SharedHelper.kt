@@ -1,11 +1,11 @@
 package alvarx4z.medialibrary
 
-import alvarx4z.medialibrary.domain.shared.Country
-import alvarx4z.medialibrary.domain.shared.Cover
-import alvarx4z.medialibrary.domain.shared.Summary
-import alvarx4z.medialibrary.domain.shared.URL
-import alvarx4z.medialibrary.domain.shared.invariants.NotEmptyString
-import alvarx4z.medialibrary.domain.shared.professional.*
+import alvarx4z.medialibrary.domain.model.shared.Country
+import alvarx4z.medialibrary.domain.model.shared.Cover
+import alvarx4z.medialibrary.domain.model.shared.Summary
+import alvarx4z.medialibrary.domain.model.shared.URL
+import alvarx4z.medialibrary.domain.model.shared.invariants.NotEmptyString
+import alvarx4z.medialibrary.domain.model.shared.professional.*
 import java.time.LocalDate
 import java.time.Month
 
