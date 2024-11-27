@@ -14,8 +14,7 @@ My personal Media Library served as a REST API by using Kotlin and Spring Boot.
 - Java 21
 - Gradle
 - Spring Boot
-- PostgreSQL
-- Docker
+- H2
 - Git
 - GitHub
 - GitHub Dependabot
