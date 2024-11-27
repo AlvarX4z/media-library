@@ -349,26 +349,6 @@ VALUES (
     'It is the 31st millennium, and mankind has spread across the galaxy. When Horus the Warmaster rebelled against the Emperor, the ensuing civil war nearly destroyed the Imperium. War raged across galaxy, pitting Astartes against their battle-brothers in a struggle where death was the only victor. This collection features stories of heroism and tragedy set during this turbulent time, by star Horus Heresy authors Dan Abnett, Graham McNeill, James Swallow and more.'
 );
 
-INSERT INTO book.books
-VALUES (
-    '9781849708098',
-    '1849708096',
-    'Tales of Heresy',
-    'Tales of Heresy',
-    'Cuentos de la Herejía',
-    NULL,
-    '2009',
-    'Book',
-    ('Science Fiction', 'Space Opera'),
-    'Warhammer 40,000',
-    'The Horus Heresy',
-    10,
-    416,
-    100,
-    'https://m.media-amazon.com/images/I/91th6vOTaJL.jpg',
-    'It is the 31st millennium, and mankind has spread across the galaxy. When Horus the Warmaster rebelled against the Emperor, the ensuing civil war nearly destroyed the Imperium. War raged across galaxy, pitting Astartes against their battle-brothers in a struggle where death was the only victor. This collection features stories of heroism and tragedy set during this turbulent time, by star Horus Heresy authors Dan Abnett, Graham McNeill, James Swallow and more.'
-);
-
 -- INSERT BOOKS|AUTHORS
 INSERT INTO book.books_authors VALUES ('9781849706179', 2);
 INSERT INTO book.books_authors VALUES ('9781844163700', 3);
