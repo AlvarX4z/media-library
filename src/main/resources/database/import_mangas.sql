@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS manga.mangas(
 );
 
 -- INDEXES
-CREATE INDEX authors_birth_city ON manga.professionals(birth_city);
-CREATE INDEX authors_birth_country ON manga.professionals(birth_country);
+CREATE INDEX professionals_birth_city ON manga.professionals(birth_city);
+CREATE INDEX professionals_birth_country ON manga.professionals(birth_country);
 
 CREATE INDEX mangas_publisher ON manga.mangas(publisher);
 CREATE INDEX mangas_magazine ON manga.mangas(magazine);
