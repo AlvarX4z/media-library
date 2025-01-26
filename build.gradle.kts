@@ -2,7 +2,7 @@ plugins {
     id("com.ncorti.ktfmt.gradle") version "0.21.0"
     id("java-test-fixtures")
     id("io.spring.dependency-management") version "1.1.7"
-    id("org.springframework.boot") version "3.4.1"
+    id("org.springframework.boot") version "3.4.2"
 
     kotlin("jvm") version "2.1.0"
     kotlin("plugin.jpa") version "2.1.0"
